@@ -81,7 +81,7 @@ export default function EditarProducto() {
                         className="form-control" 
                     />
                 </div>
-                <button type="button" onClick={guardarCambios} className="btn btn-success">
+                <button type="button" onClick={guardarCambios} className="btn btn-primary">
                     Guardar
                 </button>
                 <button type="button" onClick={() => router.push("/productos/mostrar")} className="btn btn-secondary ms-2">

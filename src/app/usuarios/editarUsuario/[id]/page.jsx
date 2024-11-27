@@ -7,7 +7,7 @@ export default function EditarUsuario() {
     const [usuario, setUsuario] = useState({
         nombre: '',
         usuario: '',
-        password: '', // Deja el campo vacío
+        password: '', 
     });
     const router = useRouter();
     const { id } = useParams();
@@ -16,7 +16,7 @@ export default function EditarUsuario() {
         const obtenerUsuario = async () => {
             try {
                 const respuesta = await axios.get(`http://localhost:3000/buscarUsuarioPorId/${id}`);
-                const { password, ...dataSinPassword } = respuesta.data; // Excluye la contraseña
+                const { password, ...dataSinPassword } = respuesta.data; 
                 setUsuario(dataSinPassword);
             } catch (error) {
                 console.error("Error al obtener el usuario:", error);
@@ -35,8 +35,6 @@ export default function EditarUsuario() {
         try {
             const url = `http://localhost:3000/editarUsuario/${id}`;
             const { password, ...usuarioActualizado } = usuario;
-            
-            // Solo incluir la contraseña si el usuario ingresó una nueva
             if (password) {
                 usuarioActualizado.password = password;
             }
@@ -79,7 +77,7 @@ export default function EditarUsuario() {
                     />
                 </div>
                 <div className="mb-3">
-                    <label>Nueva Password (dejar en blanco si no se desea cambiar)</label>
+                    <label>Nueva Password (Opcional)</label>
                     <input 
                         type="password" 
                         name="password" 

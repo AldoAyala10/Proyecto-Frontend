@@ -1,12 +1,12 @@
 'use client';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Importar useRouter
+import { useRouter } from "next/navigation"; 
 
 export default function MostrarProductos() {
     const [productos, setProductos] = useState([]);
     const [productoSeleccionado, setProductoSeleccionado] = useState(null);
-    const router = useRouter(); // Inicializar router
+    const router = useRouter(); 
 
     useEffect(() => {
         const obtenerProductos = async () => {
@@ -43,13 +43,12 @@ export default function MostrarProductos() {
     };
 
     const redirigirAgregarProducto = () => {
-        router.push('/productos/crear'); // Redirige a la página para crear un nuevo producto
+        router.push('/productos/crear'); 
     };
-
     return (
         <div className="container">
             <h1>Lista de Productos</h1>
-            <button onClick={redirigirAgregarProducto} className="btn btn-primary mb-3">
+            <button onClick={redirigirAgregarProducto} className="btn btn-info mb-3">
                 Agregar Producto
             </button>
             <table className="table">
@@ -75,7 +74,7 @@ export default function MostrarProductos() {
                             </td>
                             <td>${producto.precio}</td>
                             <td>
-                                <button onClick={() => redirigirEditarProducto(producto.id)} className="btn btn-warning btn-sm">
+                                <button onClick={() => redirigirEditarProducto(producto.id)} className="btn btn-success btn-sm">
                                     Editar
                                 </button>
                                 <button onClick={() => eliminarProducto(producto.id)} className="btn btn-danger btn-sm ms-2">
@@ -86,7 +85,7 @@ export default function MostrarProductos() {
                     ))}
                 </tbody>
             </table>
-
+    
             {productoSeleccionado && (
                 <div className="mt-4">
                     <h2>Detalles del Producto</h2>
@@ -97,4 +96,4 @@ export default function MostrarProductos() {
             )}
         </div>
     );
-}
+} 

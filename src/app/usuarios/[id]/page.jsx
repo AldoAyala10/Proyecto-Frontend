@@ -1,17 +1,15 @@
 'use client';
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'; // Asumiendo que estás usando Next.js
+import { useRouter } from 'next/navigation'; 
 
-export default function EditarUsuario({ idUsuario }) { // Se pasa el id del usuario a editar
+export default function EditarUsuario({ idUsuario }) { 
     const [usuario, setUsuario] = useState({
         nombre: '',
         usuario: '',
         password: ''
     });
     const router = useRouter();
-
-    // Obtener los datos del usuario cuando se monta el componente
     useEffect(() => {
         const obtenerUsuario = async () => {
             try {
@@ -31,7 +29,7 @@ export default function EditarUsuario({ idUsuario }) { // Se pasa el id del usua
             const url = `http://localhost:3000/editarUsuario/${idUsuario}`;
             await axios.put(url, usuario);
             alert("Usuario actualizado con éxito");
-            router.push("/usuarios"); // Redirigir después de la actualización
+            router.push("/usuarios"); 
         } catch (error) {
             console.error("Error al actualizar el usuario:", error);
             alert("Hubo un error al actualizar el usuario");

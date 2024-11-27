@@ -23,7 +23,7 @@ export default function CrearUsuario() {
             
             if (respuesta.data) {
                 alert("Usuario creado exitosamente");
-                router.push("/usuarios/mostrar"); // Redirige a la página de usuarios
+                router.push("/usuarios/mostrar"); 
             } else {
                 alert("Error al crear el usuario");
             }

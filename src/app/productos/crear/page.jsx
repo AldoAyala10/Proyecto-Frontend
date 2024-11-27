@@ -14,7 +14,6 @@ export default function CrearProducto() {
         e.preventDefault();
         
         try {
-            // Convierte los datos  y envia al backend
             const productoData = {
                 nombre,
                 descripcion,

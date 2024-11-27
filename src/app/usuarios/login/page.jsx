@@ -11,9 +11,8 @@ async function validarLogin(e) {
 
     try {
         const response = await axios.post(url, datos);
-        const usuario = response.data; // Asegúrate de manejar la respuesta según tu backend
+        const usuario = response.data; 
         console.log("Usuario logueado:", usuario);
-        // Aquí puedes manejar la redirección o guardar datos en el estado
     } catch (error) {
         console.error("Error en el inicio de sesión:", error);
     }
